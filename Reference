@@ -1,0 +1,39 @@
+/** @Pickup place adder */
+pickupPlace.length == 0 && (
+    <Container padd="10px" direction="column" justify="space-between" align="center" width="100%" >
+        <Container direction="column" width="90%" >
+            <Container justify="flex-start">
+                <BouncyCheckbox style={{ marginBottom: 14 }} fillColor={`${colors.secondary}`} textStyle={{ textDecorationLine: "none" }} text="I am not the sender" onPress={(isChecked: boolean) => {
+                    setIsSender(isChecked)
+                    dispatch(pickupChangeIsChecked("_"))
+                    dispatch(dropoffChangeIsChecked("_"))
+                }} />
+            </Container>
+            {
+                isSender && (<Container justify="space-between">
+                    <Container width="50%" direction="column">
+                        <Input onChangeText={handleChange("name")} radius="0px" borderWidth="0px" borderBottomWidth={1} placeholder="Full name" width="100%" />
+                        <FormError error={errors.name} touched={touched.name} />
+
+                    </Container>
+                    <Container width="50%" direction="column">
+                        <Input onChangeText={handleChange("phone_number")} keyboardType="numeric" radius="0px" borderWidth="0px" borderBottomWidth={1} placeholder="Phone number" width="100%" />
+                        <FormError error={errors.phone_number} touched={touched.phone_number} />
+                    </Container>
+                </Container>)
+            }
+        </Container>
+        <View style={{ width: "100%", height: 10, marginLeft: 40, marginVertical: 10 }}>
+            <GooglePlace placeholder="Pickup location" from={from} setFrom={setFrom} />
+        </View>
+        <Container width="85%">
+            <Input width="70%" radius="0px" borderWidth="0px" borderBottomWidth={0.5} onChangeText={(text) => setFrom({ ...from, specific_loaction: text })} placeholder="Specific pickup location" />
+            <Input keyboardType="numeric" width="30%" radius="0px" borderWidth="0px" borderBottomWidth={0.5} onChangeText={(text) => setWeightLabor({ ...weightLabor, weight: text })} placeholder="Weight" />
+        </Container>
+        <Container padd="0px" width="90%" justify="flex-start">
+            <Button width="50px" height="30px" onPress={() => {
+                handleSubmit(values)
+            }} text="Add" />
+        </Container>
+    </Container>
+)

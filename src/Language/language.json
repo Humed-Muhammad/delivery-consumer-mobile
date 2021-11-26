@@ -1,0 +1,280 @@
+{
+    "Login": {
+        "English": {
+            "Title": "Login",
+            "Login_button": "Login",
+            "Go_to_register": "I don't have an account",
+            "Forget": "Forget password?",
+            "Email_phone": "Email / Phone number",
+            "Password": "Password"
+        },
+        "Amharic": {
+            "Title": "ግባ",
+            "Login_button": "ግባ",
+            "Go_to_register": "መለያ የለኝም",
+            "Forget": "የይለፍ ቃል ረሳው?",
+            "Email_phone": "ኢሜል / ስልክ ቁጥር",
+            "Password": "የይለፍ ቃል"
+        }
+    },
+    "Register": {
+        "English": {
+            "Title": "Register",
+            "Register_button": "Register",
+            "Go_to_login": "I have an account!",
+            "Email": "Email",
+            "Phone_number": "Phone number",
+            "Password": "Password"
+        },
+        "Amharic": {
+            "Title": "Register",
+            "Register_button": "Register",
+            "Go_to_login": "I have an account!",
+            "Email": "Email",
+            "Phone_number": "Phone number",
+            "Password": "Password"
+        }
+    },
+    "Home": {
+        "English": {
+            "Book_button": "Book now"
+        },
+        "Amharic": {
+            "Book_button": "አሁን ያስይዙ"
+        }
+    },
+    "Pickup": {
+        "English": {
+            "Checkbox_title": "i am not a sender",
+            "Full_name": "Full name",
+            "Phone_number": "Phone number",
+            "Pickup_location": "Pickup location",
+            "Specific_pickup_location": "Specific pickup location",
+            "Weight": "Weight",
+            "Add_button": "Add",
+            "Cancel_button": "Cancel",
+            "Next_button": "Next",
+            "Dialog_title": "Pickup location",
+            "Dialog_description": "Please first add a pickup location!"
+        },
+        "Amharic": {
+            "Checkbox_title": "ላኪ አይደለሁም",
+            "Full_name": "ሙሉ ስም",
+            "Phone_number": "ስልክ ቁጥር",
+            "Pickup_location": "የመውሰጃ ቦታ",
+            "Specific_pickup_location": "ውስን የሆነ የመውሰጃ ቦታ",
+            "Weight": "ክብደት",
+            "Add_button": "አክል",
+            "Cancel_button": "ሰርዝ",
+            "Next_button": "ቀጣይ",
+            "Dialog_title": "የመውሰጃ ቦታ",
+            "Dialog_description": "እባኮትን መጀመሪያ የመውሰጃ ቦታ ይጨምሩ!"
+        }
+    },
+    "Pickup_Dialog": {
+        "English": {
+            "Checkbox_title": "i am not a sender",
+            "Full_name": "Full name",
+            "Phone_number": "Phone number",
+            "Pickup_location": "Pickup location",
+            "Specific_pickup_location": "Specific pickup location",
+            "Weight": "Weight",
+            "Add_button": "Add",
+            "Title": "Add Pickup location",
+            "Dialog_title": "Pickup location",
+            "Dialog_description": "Please first add a pickup location!"
+        },
+        "Amharic": {
+            "Checkbox_title": "ላኪ አይደለሁም",
+            "Full_name": "ሙሉ ስም",
+            "Phone_number": "ስልክ ቁጥር",
+            "Pickup_location": "የመውሰጃ ቦታ",
+            "Specific_pickup_location": "ውስን የሆነ የመውሰጃ ቦታ",
+            "Weight": "ክብደት",
+            "Add_button": "አክል",
+            "Title": "የመውሰጃ ቦታ ይጨምሩ",
+            "Dialog_title": "የመውሰጃ ቦታ",
+            "Dialog_description": "እባኮትን መጀመሪያ የመውሰጃ ቦታ ይጨምሩ!"
+        }
+    },
+    "Dropoff": {
+        "English": {
+            "Checkbox_title": "i am not a receiver",
+            "Full_name": "Full name",
+            "Phone_number": "Phone number",
+            "Dropoff_location": "Dropoff location",
+            "Specific_dropoff_location": "Specific Dropoff location",
+            "Add_button": "Add",
+            "Back_button": "Back",
+            "Next_button": "Next",
+            "Dialog_title": "Dropoff location",
+            "Dialog_description": "Please first add a Dropoff location!",
+            "Additional_info": "Additional information"
+        },
+        "Amharic": {
+            "Checkbox_title": "ተቀባይ አይደለሁም",
+            "Full_name": "ሙሉ ስም",
+            "Phone_number": "ስልክ ቁጥር",
+            "Dropoff_location": "የሚወርድበት ቦታ",
+            "Specific_dropoff_location": "ውስን የሆነ የሚወርድበት ቦታ",
+            "Add_button": "አክል",
+            "Back_button": "ተመለስ",
+            "Next_button": "ቀጣይ",
+            "Dialog_title": "የሚወርድበት ቦታ",
+            "Dialog_description": "እባኮትን መጀመሪያ የሚወርድበት ቦታ ይጨምሩ!",
+            "Additional_info": "ተጭማሪ መረጃ"
+        }
+    },
+    "Dropoff_Dialog": {
+        "English": {
+            "Checkbox_title": "i am not a receiver",
+            "Full_name": "Full name",
+            "Phone_number": "Phone number",
+            "Dropoff_location": "Dropoff location",
+            "Specific_dropoff_location": "Specific Dropoff location",
+            "Add_button": "Add",
+            "Title": "Add Dropoff location"
+        },
+        "Amharic": {
+            "Checkbox_title": "ተቀባይ አይደለሁም",
+            "Full_name": "ሙሉ ስም",
+            "Phone_number": "ስልክ ቁጥር",
+            "Dropoff_location": "የሚወርድበት ቦታ",
+            "Specific_dropoff_location": "ውስን የሆነ የሚወርድበት ቦታ",
+            "Add_button": "አክል",
+            "Title": "የሚወርድበት ቦታ ይጨምሩ"
+        }
+    },
+    "Summary": {
+        "English": {
+            "Title": "Confirm your order",
+            "From": "From",
+            "To": "To",
+            "Estimation": "Estimation",
+            "Cancel_button": "Cancel",
+            "Confirm_button": "Confirm Your Order"
+        },
+        "Amharic": {
+            "Title": "ትዕዛዝዎን ያረጋግጡ",
+            "From": "ከ",
+            "To": "ወደ",
+            "Estimation": "ግምት",
+            "Cancel_button": "ሰርዝ",
+            "Confirm_button": "ትዕዛዝዎን ያረጋግጡ"
+        }
+    },
+    "Order_list": {
+        "English": {
+            "Pickup": "Pickup",
+            "Dropoff": "Dropoff",
+            "Order_number": "Order number",
+            "Date": "Order Date"
+        },
+        "Amharic": {
+            "Pickup": "መውሰጃ",
+            "Dropoff": "ማውረጃ",
+            "Order_number": "የትእዛዝ ቁጥር",
+            "Date": "የታዘዘበት ቀን"
+        }
+    },
+    "Order_list_menu": {
+        "English": {
+            "Cancel_order": "Cancel Order",
+            "Report_problem": "Report a problem"
+        },
+        "Amharic": {
+            "Cancel_order": "ትእዛዝ ሰርዝ",
+            "Report_problem": "ችግር ሪፖርት አድርግ"
+        }
+    },
+    "Order_detail": {
+        "English": {
+            "Pickup": "Pickup",
+            "Dropoff": "Dropoff",
+            "Order_number": "Order number",
+            "Date": "Order Date",
+            "Report_problem": "Report a problem",
+            "Confirm_button": "Confirmation PIN",
+            "Cancel_button": "Cancel Order"
+        },
+        "Amharic": {
+            "Pickup": "መውሰጃ",
+            "Dropoff": "ማውረጃ",
+            "Order_number": "የትእዛዝ ቁጥር",
+            "Date": "የታዘዘበት ቀን",
+            "Report_problem": "ችግር ሪፖርት አድርግ",
+            "Confirm_button": "የማረጋገጫ ፒን",
+            "Cancel_button": "ትእዛዝ ሰርዝ"
+        }
+    },
+    "Report_Card": {
+        "English": {
+            "Report_type": "Report Type",
+            "Date": "Date"
+        },
+        "Amharic": {
+            "Report_type": "የሪፖርት አይነት",
+            "Date": "ቀን"
+        }
+    },
+    "Report_Modal": {
+        "English": {
+            "Dropdown_label": "Select report type",
+            "Additional_info": "Additional information",
+            "Submit_button": "Submit"
+        },
+        "Amharic": {
+            "Dropdown_label": "የሪፖርት ዓይነት ይምረጡ",
+            "Additional_info": "ተጭማሪ መረጃ",
+            "Submit_button": "አስገባ"
+        }
+    },
+    "Setting": {
+        "English": {
+            "Save_button": "Save",
+            "Address_title": "Your Address",
+            "Region": "Region",
+            "City": "City",
+            "Sub_city": "Subcity",
+            "Woreda": "Woreda"
+        },
+        "Amharic": {
+            "Save_button": "አስቀምጥ",
+            "Address_title": "አድራሻዎ",
+            "Region": "Region",
+            "City": "City",
+            "Sub_city": "Subcity",
+            "Woreda": "Woreda"
+        }
+    },
+    "Drawer_navigation": {
+        "English": {
+            "Home": "Home",
+            "Order_history": "Order history",
+            "Setting": "Setting",
+            "Language": "Language",
+            "Logout": "Logout"
+        },
+        "Amharic": {
+            "Home": "መግቢያ",
+            "Order_history": "የትዕዛዝ ታሪክ",
+            "Setting": "መቼት",
+            "Language": "ቋንቋ",
+            "Logout": "ውጣ"
+        }
+    },
+    "Navigations": {
+        "Authenticated_list": {
+            "English": {
+                "Root": "Root",
+                "Pickup": "Pickup",
+                "Drop-off": "Drop-off"
+            },
+            "Amharic": {
+                "Root": "መግቢያ",
+                "Pickup": "መውሰጃ",
+                "Drop-off": "ማውረጃ"
+            }
+        }
+    }
+}
