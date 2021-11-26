@@ -48,6 +48,7 @@ const drawerIcon = (navigation) => {
 
 const CustomDrawerContent = (props) => {
     const [userName, setUserName] = useState<any>(null)
+    const { userId } = useAppSelector(state => state.account)
     const dispatch = useAppDispatch()
     const { Drawer_navigation } = useAppSelector(languageData)
     const { languageType } = useAppSelector(state => state.user)
@@ -60,11 +61,10 @@ const CustomDrawerContent = (props) => {
         fetchData()
 
     }, [userName])
-    console.log(userName)
     return (
         <ScrollView {...props}>
             <Container bg={colors.border} direction="column" justify="space-evenly" height="200px">
-                <Image imageHeight={100} imageWidth={100} radius={50} source={{ uri: "https://cdn.now.howstuffworks.com/media-content/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg" }} />
+                <Image imageHeight={100} imageWidth={100} radius={50} source={{ uri: `http://192.168.0.111/DeliveryMobileApi/uploads/profile_image/${userId}.jpg` }} />
                 <Text color={colors.gray} fontSize="15px" fontWeight="bold">Hi {`${userName}`.toLocaleUpperCase()}</Text>
             </Container>
             <DrawerItemList {...props} />

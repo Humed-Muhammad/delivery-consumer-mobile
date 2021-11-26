@@ -14,14 +14,13 @@ import Toast from "react-native-toast-message"
 import { NativeBaseProvider } from 'native-base';
 import Summary from '@Screen/Summary';
 import OrderDetail from '@Screen/OrderDetail';
-
+import * as SplashScreen from "react-native-bootsplash";
 
 
 const queryClient = new QueryClient()
 
 const RootStack = createNativeStackNavigator()
 const App = () => {
-  let [timePassed, setTimePassed] = useState(false)
   const dispatch = useAppDispatch()
   const { loggedIn } = useSelector((state: any) => state.account)
 
@@ -37,10 +36,10 @@ const App = () => {
       }
 
     }
-    fetchData()
-    setTimeout(() => {
-      setTimePassed(true)
-    }, 1000)
+    fetchData().finally(() => SplashScreen.hide())
+    // setTimeout(() => {
+    //   setTimePassed(true)
+    // }, 1000)
 
   }, [loggedIn])
 
@@ -65,9 +64,10 @@ const App = () => {
     <NavigationContainer>
       <RootStack.Navigator>
         {
-          !timePassed ? (
-            <RootStack.Screen options={{ headerShown: false }} name="Splash_Screen" component={SplashScreenStack} />
-          ) : Navigations()
+          // !timePassed ? (
+          //   <RootStack.Screen options={{ headerShown: false }} name="Splash_Screen" component={SplashScreenStack} />
+          // ) : 
+          Navigations()
 
         }
       </RootStack.Navigator>
