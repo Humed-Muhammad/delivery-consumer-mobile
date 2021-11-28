@@ -10,11 +10,21 @@ import RNPickerSelect from 'react-native-picker-select';
 import Input from '@Components/Atoms/Inputs'
 import { useAppSelector } from '@Redux/Hooks'
 import { languageData } from '@Redux/MemoizedSelectors'
+import { postRequest } from '@Api/index'
+import { Formik } from 'formik'
 
 
 const Address = () => {
+    const [region, setRegion] = useState([])
     const [city, setCity] = useState([])
     const [sub_city, setSub_City] = useState([])
+
+    // address values
+    const [selectedRegion, setSelectedRegion] = useState<any>("")
+    const [selectedCity, setSelectedCity] = useState<any>("")
+    const [selectedSubcity, setSelectedSubcity] = useState<any>("")
+
+
     const { Setting } = useAppSelector(languageData)
     const { languageType } = useAppSelector(state => state.user)
 
@@ -63,40 +73,55 @@ const Address = () => {
         setSub_City(subCityList)
     }
 
+    // const addAddress = async () => {
+    //     const data = await postRequest("Account/add_address",)
+    // }
+    console.log(selectedRegion && selectedRegion[0]["label"])
     return (
-        <Container direction="column" justify="space-evenly" >
-            <Text fontSize={fonts.large} fontWeight="bold" >{Setting[languageType].Address_title}</Text>
-            <CardConatiner padd="10px" radius="2px" justify="space-evenly" width="90%" direction="column">
-                <Container align="flex-start" direction="column">
-                    <Text>Region</Text>
-                    <RNPickerSelect
-                        onValueChange={handleCity}
-                        items={regionList}
+        <Formik
+            initialValues={{ woreda: 2, house_number: 557, location: "bole" }}
+            onSubmit={(values) => console.log(values)}
+        >
+            {({ handleChange, handleSubmit, values }) => (
+                <Container direction="column" justify="space-evenly" >
+                    <Text fontSize={fonts.large} fontWeight="bold" >{Setting[languageType].Address_title}</Text>
+                    <CardConatiner padd="10px" radius="2px" justify="space-evenly" width="90%" direction="column">
+                        <Container align="flex-start" direction="column">
+                            <Text>Region</Text>
+                            <RNPickerSelect
+                                onValueChange={(id) => {
+                                    handleCity(id)
+                                    const choosedRegion = regionList.filter(item => item.value == id)
+                                    setSelectedRegion(choosedRegion)
+                                }}
+                                items={regionList}
 
-                    />
-                </Container>
-                <Container align="flex-start" direction="column">
-                    <Text>City</Text>
-                    <RNPickerSelect
-                        onValueChange={handleSubCity}
-                        items={city}
-                    />
-                </Container>
-                <Container align="flex-start" direction="column">
-                    <Text>Sub-City</Text>
-                    <RNPickerSelect
-                        onValueChange={(value) => console.log(value)}
-                        items={sub_city}
-                    />
-                </Container>
-                <Container align="flex-start" direction="column">
-                    <Text>Woreda</Text>
-                    <Input placeholder="Woreda" value="02" radius="0px" borderWidth="0px" borderBottomWidth={1} />
-                </Container>
-                <Button onPress={() => console.log("Id")} width="90%" text="Save" />
-            </CardConatiner>
+                            />
+                        </Container>
+                        <Container align="flex-start" direction="column">
+                            <Text>City</Text>
+                            <RNPickerSelect
+                                onValueChange={handleSubCity}
+                                items={city}
+                            />
+                        </Container>
+                        <Container align="flex-start" direction="column">
+                            <Text>Sub-City</Text>
+                            <RNPickerSelect
+                                onValueChange={(value) => console.log(value)}
+                                items={sub_city}
+                            />
+                        </Container>
+                        <Container align="flex-start" direction="column">
+                            <Text>Woreda</Text>
+                            <Input placeholder="Woreda" value="02" radius="0px" borderWidth="0px" borderBottomWidth={1} />
+                        </Container>
+                        <Button onPress={() => console.log("Id")} width="90%" text="Save" />
+                    </CardConatiner>
 
-        </Container>
+                </Container>
+            )}
+        </Formik>
     )
 }
 

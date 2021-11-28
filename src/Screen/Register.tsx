@@ -30,13 +30,14 @@ const Register = ({ navigation }: any) => {
     return (
         <Formik
             initialValues={{ Full_name: "", Phone_number: "", Email: '', Password: "" }}
-            validationSchema={registerSchema}
+            // validationSchema={registerSchema}
             onSubmit={async (values) => {
                 let formData = new FormData();
                 formData.append("email", values.Email)
                 formData.append("phone_number", values.Phone_number)
                 formData.append("full_name", values.Full_name)
                 formData.append("password", values.Password)
+                formData.append("type", "Consumer")
                 const data: any = await postRequest("Account/sign_up", formData, "")
                 if (data.status) {
                     showToast(successToast("Successfully registerd", data.message))

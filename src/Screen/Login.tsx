@@ -37,6 +37,7 @@ const Login = ({ navigation }: any) => {
         formData.append("email", values.Email)
         formData.append("password", values.Password)
         const data: any = await postRequest("Account/login", formData, "")
+        console.log(data)
         if (data.status) {
             storeJsonData(data, "user_data")
             storeStringData(data["message"]["full_name"], "user_name")

@@ -23,3 +23,19 @@ export const reportingFunction = async (setReportLoading, setOpenReportModal, or
         }, 500)
     }
 }
+
+
+export const coordinateDelta = (coords) => {
+    const oneDegreeOfLongitudeInMeters = 111.32 * 1000;
+    const circumference = (40075 / 360) * 1000;
+
+    const latDelta = coords.accuracy * (1 / (Math.cos(coords.latitude) * circumference));
+    const lonDelta = (coords.accuracy / oneDegreeOfLongitudeInMeters);
+
+    return {
+        latitude: coords.latitude,
+        longitude: coords.longitude,
+        latitudeDelta: Math.max(0, latDelta),
+        longitudeDelta: Math.max(0, lonDelta)
+    };
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { DrawerNavigation as Authenticated } from '@Navigation/DrawerNavigation'
@@ -8,14 +8,16 @@ import { store } from '@Redux/store';
 import { getJsonData } from '@Utils/AccessStorage';
 import { useAppDispatch } from '@Redux/Hooks';
 import { loggeIn } from '@Redux/Slices/AccountSlice';
-import { SplashScreenStack } from '@Navigation/SplashScreenStack';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import Toast from "react-native-toast-message"
 import { NativeBaseProvider } from 'native-base';
 import Summary from '@Screen/Summary';
 import OrderDetail from '@Screen/OrderDetail';
 import * as SplashScreen from "react-native-bootsplash";
-
+import { requestGeolocationAccess } from '@Utils/PermissionRequestes';
+import Geolocation from '@react-native-community/geolocation';
+import { coordinateDelta } from '@Utils/Function';
+import { getUserCurrentLocation } from '@Redux/Slices/PickUpSlice';
 
 const queryClient = new QueryClient()
 
@@ -37,10 +39,6 @@ const App = () => {
 
     }
     fetchData().finally(() => SplashScreen.hide())
-    // setTimeout(() => {
-    //   setTimePassed(true)
-    // }, 1000)
-
   }, [loggedIn])
 
   const Navigations = () => {
@@ -57,6 +55,12 @@ const App = () => {
       )
     )
   }
+
+  useEffect(() => {
+    if (requestGeolocationAccess()) {
+      Geolocation.getCurrentPosition(({ coords }) => dispatch(getUserCurrentLocation(coordinateDelta(coords))));
+    }
+  }, [])
 
 
   return (

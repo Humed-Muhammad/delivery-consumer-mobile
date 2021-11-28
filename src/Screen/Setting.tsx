@@ -68,7 +68,7 @@ const Profile = () => {
             <Container justify="flex-start" direction="column" height="650px">
                 <Container>
                     <FilePicker setLoading={setLoading} />
-                    {loading ? (<Loader height="250px" width="90%" />) : (<Image radius={5} imageHeight={250} imageWidth="90%" source={{ uri: userProfileData.profile_image || userProfileFromRedux.profileImage }} />)}
+                    {loading ? (<Loader height="250px" width="90%" />) : (<Image radius={5} imageHeight={250} imageWidth="90%" source={{ uri: `http://192.168.0.111/DeliveryMobileApi/uploads/profile_image/${userId}.jpg?${new Date()}` || userProfileFromRedux.profileImage }} />)}
                 </Container>
                 <CardConatiner radius="2px" bottom="20px" position="absolute" justify="space-evenly" width="90%" height="55%" direction="column">
                     <Input value={userProfileData.full_name} radius="0px" borderWidth="0px" borderBottomWidth={1} width="85%" placeholder="Full Name" onChangeText={(text) => setUserProfileData({ ...userProfileData, full_name: text })} />

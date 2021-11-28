@@ -26,19 +26,10 @@ const VehicleSlice = createSlice({
             }]
     },
     reducers: {
-        handleVehicleClick: (state, action) => {
-            const newState = [...state.vehicleList]
-            newState[action.payload].status = true;
-            newState.forEach(item => {
-                if (newState.indexOf(item) != action.payload) {
-                    item.status = false
-                }
-            })
-            state.vehicleList = newState
-        }
+
     }
 })
 
-export const { handleVehicleClick } = VehicleSlice.actions
+export const { } = VehicleSlice.actions
 
 export default VehicleSlice.reducer

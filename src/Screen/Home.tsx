@@ -23,13 +23,20 @@ const Home = ({ navigation }: any) => {
     const language = Home[languageType]
 
     useEffect(() => {
+        let cancleFetch = false
         const fetchAsyncStorageData = async () => {
             const data = await getJsonData("user_data")
             dispatch(getUserId(data["message"]["id"]))
 
         }
+        if (!cancleFetch) {
+            fetchAsyncStorageData()
+        }
 
-        fetchAsyncStorageData()
+        return () => {
+            cancleFetch = true
+        }
+
     }, [])
 
     const fetchData = useCallback(async () => {
@@ -41,7 +48,6 @@ const Home = ({ navigation }: any) => {
         fetchData()
         return () => null
     }, [fetchData])
-    console.log(global.language)
     return (
         <>
             <Map />

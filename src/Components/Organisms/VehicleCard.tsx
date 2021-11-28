@@ -4,11 +4,11 @@ import CardConatiner from '@Components/Atoms/CardContainer'
 import Image from '@Components/Atoms/Image'
 import { colors } from '@Utils/Color/colors'
 import { getVehicleId } from '@Redux/Slices/PickUpSlice'
-import { useAppDispatch } from '@Redux/Hooks'
-import { handleVehicleClick } from "@Redux/Slices/VehiclesSlice"
+import { useAppDispatch, useAppSelector } from '@Redux/Hooks'
 
 const VehicleCard = ({ index, item }) => {
     const dispatch = useAppDispatch()
+    const selectedVehicleId = useAppSelector(state => state.pickup.vehicleId)
 
 
     useEffect(() => {
@@ -18,11 +18,10 @@ const VehicleCard = ({ index, item }) => {
     }, [])
 
     return (
-        <TouchableHighlight underlayColor={colors.white} onPress={() => {
-            dispatch(handleVehicleClick(index))
+        <TouchableHighlight key={item.id} underlayColor={colors.white} onPress={() => {
             dispatch(getVehicleId(item.id))
         }} >
-            <CardConatiner borderTopWidth={item.status && "3px"} borderColor={item.status && colors.gray} padd="10px" justify="space-around" width="120px" height="90px">
+            <CardConatiner borderTopWidth={(selectedVehicleId === item.id) && "3px"} borderColor={(selectedVehicleId === item.id) && colors.gray} padd="10px" justify="space-around" width="120px" height="90px">
                 <Image imageWidth={100} source={{
                     uri: `${item.uri}`,
                 }} />

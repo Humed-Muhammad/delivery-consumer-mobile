@@ -73,12 +73,13 @@ function FilePicker({ setLoading }) {
             formData.append("id", userId)
             formData.append("image", endResult)
             const { status, message }: Partial<ResponseType> = await postRequest("Account/change_profile_image", formData)
+            console.log(status, message)
             if (status) {
                 setTimeout(() => setLoading(false), 2000)
                 dispatch(changeProfileImage(imageResult.uri))
             } else {
                 setLoading(false)
-                showToast(errorToast("Failed", message))
+                showToast(errorToast("Failed", "Some thing went wrong please try again!"))
             }
         } catch (e) {
             handleError(e)

@@ -7,6 +7,7 @@ import GooglePlace from '@Components/Organisms/GooglePlace'
 import PickupCheckboxInputs from '@Components/Molecules/PickupCheckboxInputs'
 import { languageData } from '@Redux/MemoizedSelectors'
 import { useAppSelector } from '@Redux/Hooks'
+import DatePicker from '@Components/Organisms/DatePicker'
 
 interface Props {
     setterFunctionOne: SetStateAction<any>,
@@ -48,6 +49,7 @@ const PlaceAddingForm = ({ setterFunctionOne, setterValueOne, setterFunctionTwo,
                 <Button width="50px" height="30px" onPress={() => {
                     formikHandleSubmit(formikValue)
                 }} text={Pickup[languageType].Add_button} />
+                <DatePicker />
             </Container>
         </Container>
     )

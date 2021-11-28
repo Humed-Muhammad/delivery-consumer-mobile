@@ -61,10 +61,11 @@ const CustomDrawerContent = (props) => {
         fetchData()
 
     }, [userName])
+    console.log(userId)
     return (
         <ScrollView {...props}>
             <Container bg={colors.border} direction="column" justify="space-evenly" height="200px">
-                <Image imageHeight={100} imageWidth={100} radius={50} source={{ uri: `http://192.168.0.111/DeliveryMobileApi/uploads/profile_image/${userId}.jpg` }} />
+                <Image imageHeight={100} imageWidth={100} radius={50} source={{ uri: `http://192.168.0.111/DeliveryMobileApi/uploads/profile_image/${userId}.jpg?${new Date()}` }} />
                 <Text color={colors.gray} fontSize="15px" fontWeight="bold">Hi {`${userName}`.toLocaleUpperCase()}</Text>
             </Container>
             <DrawerItemList {...props} />

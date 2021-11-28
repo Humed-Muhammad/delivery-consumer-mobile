@@ -7,7 +7,6 @@ import { useAppSelector, useAppDispatch } from "@Redux/Hooks"
 import { dropoffPlaces, pickupPlaces, pickupLineCoordinates, dropoffLineCoordinates } from "@Redux/MemoizedSelectors"
 
 const Map = () => {
-    const dispatch = useAppDispatch()
     const { currentLocation } = useAppSelector((state: any) => state.pickup.userLocations)
     const pickup = useAppSelector(pickupPlaces)
     const dropoff = useAppSelector(dropoffPlaces)
@@ -33,12 +32,7 @@ const Map = () => {
                 //     console.log(region)
                 //     dispatch(getUserCurrentLocation(region))
                 // }}
-                region={{
-                    latitude: currentLocation.latitude,
-                    longitude: currentLocation.longitude,
-                    latitudeDelta: currentLocation.latitudeDelta || 0.021064477015438204,
-                    longitudeDelta: currentLocation.longitudeDelta || 0.02132675609124921,
-                }}
+                region={currentLocation}
                 followsUserLocation={false}
             >
                 {

@@ -24,7 +24,8 @@ const PickupSllice = createSlice({
             },
             selectedLocations: []
         },
-        pickupLineCoordinates: []
+        pickupLineCoordinates: [],
+        orderDate: null
     },
     reducers: {
         pickupToogleModal: (state) => {
@@ -78,6 +79,9 @@ const PickupSllice = createSlice({
         removePickupLineCoordinates: (state, action) => {
             state.pickupLineCoordinates.splice(action.payload, 1)
         },
+        getOrderDate: (state, action) => {
+            state.orderDate = action.payload
+        },
         resetPickup: (state) => {
             state.status = {
                 pickupModalStatus: false,
@@ -115,6 +119,7 @@ export const {
     reorderPickupPlaces,
     addPickupLineCoordinates,
     removePickupLineCoordinates,
+    getOrderDate,
     resetPickup
 } = PickupSllice.actions
 

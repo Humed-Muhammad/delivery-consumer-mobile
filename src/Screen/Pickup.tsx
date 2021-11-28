@@ -20,6 +20,9 @@ import { pickupPlaces, vehicleList, languageData } from "@Redux/MemoizedSelector
 import AlertComponent from "@Components/Organisms/AlertComponent"
 import { namePhoneValidation } from "@Utils/Validation/ValidationSchemas"
 import PlaceAddingForm from "@Components/Template/PlaceAddingForm"
+import { useGetQuery } from "@ReactQuery/Hooks"
+import { UseQueryResult } from "react-query"
+import { AxiosResponse } from "axios"
 
 const Pickup = ({ navigation }) => {
     let [isSender, setIsSender] = useState(false)
@@ -31,8 +34,10 @@ const Pickup = ({ navigation }) => {
     const { Pickup } = useAppSelector(languageData)
     const { languageType } = useAppSelector(state => state.user)
 
-
-    const Vehicles = allVehicles.map((item, index) => {
+    const { data }: UseQueryResult<unknown | any> = useGetQuery("Order/vehicle_list", "vehicle_list")
+    const vehicles = allVehicles || data
+    console.log(data)
+    const Vehicles = vehicles.map((item, index) => {
         return (<VehicleCard item={item} key={index} index={index} />)
     })
     const handleDataSubmit = (values, pass) => {
